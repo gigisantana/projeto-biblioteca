@@ -27,10 +27,10 @@ class Menu:
         print(" 0 - Retornar ao menu principal")
     
     def executar(self):
-        self.menu_principal()
         registro = RegistroLivros()
 
         while True:
+            self.menu_principal()
             opcao = input("Escolha a opção desejada: ")
             if opcao == "1":
                 opcao_pesquisa = input("Digite a opção de pesquisa (1 - Título, 2 - Autor, 3- Ano de Publicação): ")
@@ -52,28 +52,27 @@ class Menu:
                 opcao_visualizar = input("Escolha a opção desejada: ")
                 if opcao_visualizar == "1":
                     registro.mostrar_livros_cadastrados()
-                    break
+                
                 elif opcao_visualizar == "2":
                     registro.mostrar_livros_disponiveis()
-                    break
+                    
                 elif opcao_visualizar == "3":
                     registro.mostrar_livros_emprestados()
-                    break
+                    
                 elif opcao_visualizar == "4":
                     GerenciarUsuarios.mostrar_usuarios()
-                    break
+                    
                 elif opcao_visualizar == "0":
                     self.menu_principal()
 
             elif opcao == "3":
                 registro.emprestar_livros()
-                break
+                
             elif opcao == "4":
                 registro.devolver_livros()
-                break
+                
             elif opcao == "5":
                 registro.add_livro()
-                break
             elif opcao == "6":
                 GerenciarUsuarios.adicionar_usuario()
             elif opcao == "0":
